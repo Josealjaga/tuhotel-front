@@ -12,6 +12,7 @@ import Input from '@Shared/Components/Input';
 import Button from '@Shared/Components/Button';
 
 import { User } from '@contexts/shared/domain/models/User';
+import { BACKEND } from '@Shared/Consts/Back';
 
 type SignupProps = object;
 
@@ -48,7 +49,7 @@ const Signup: FC<SignupProps> = () => {
     try {
       const body = JSON.stringify(data);
 
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/signup`, { 
+      const response = await fetch(`${BACKEND}/auth/signup`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

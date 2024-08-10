@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card2 from '@Shared/Components/Card2';
+import { BACKEND } from '@Shared/Consts/Back';
 
 interface Hotel {
   id: string;
@@ -29,7 +30,7 @@ const Home: FC<HomeProps> = () => {
   useEffect(() => {
     setLoading(true);
     const getAllHotels = async () => {
-      const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/hotels`, {
+      const result = await fetch(`${BACKEND}/hotels`, {
         method: 'GET',
       });
 
