@@ -1,1 +1,1 @@
-export const BACKEND = process.env.REACT_APP_BACKEND_URL
+export const BACKEND ="https://tuhotel-back.onrender.com"
