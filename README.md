@@ -56,16 +56,6 @@ Este es el frontend de la aplicación TuHotel, una plataforma para gestionar res
 - **`npm run build`**: Construye la aplicación para producción en la carpeta `build`.
 - **`npm test`**: Ejecuta las pruebas.
 
-## Contribuciones
-
-Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
-
-1. Haz un fork del proyecto.
-2. Crea una rama para tu nueva funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz commit (`git commit -m 'Añadir nueva funcionalidad'`).
-4. Sube los cambios a tu repositorio (`git push origin feature/nueva-funcionalidad`).
-5. Crea un pull request en GitHub.
-
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
