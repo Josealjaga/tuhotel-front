@@ -1,34 +1,71 @@
-<<<<<<< HEAD
-# tuhotel-front
-=======
-# React + TypeScript + Vite
+# TuHotel - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es el frontend de la aplicación TuHotel, una plataforma para gestionar reservas de hoteles, incluyendo la administración de hoteles y habitaciones. Esta aplicación está desarrollada en React y utiliza varias bibliotecas para mejorar la experiencia del usuario.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Listado de hoteles**: Visualiza todos los hoteles disponibles.
+- **Detalles del hotel**: Consulta la información detallada de cada hotel.
+- **Reservaciones**: Permite a los usuarios realizar reservaciones de habitaciones.
+- **Administración de hoteles y habitaciones**: Los usuarios con rol de administrador pueden gestionar los hoteles y las habitaciones.
+- **Autenticación**: Sistema de registro e inicio de sesión de usuarios.
+  
+## Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+- **React**: Biblioteca principal para construir la interfaz de usuario.
+- **React Router**: Manejo de rutas dentro de la aplicación.
+- **Tailwind CSS**: Estilos de la aplicación.
+- **React Hook Form**: Manejo de formularios y validación.
+- **Notistack**: Notificaciones para la experiencia del usuario.
+- **Fetch API**: Para realizar peticiones HTTP a la API.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Configuración del entorno
 
-- Configure the top-level `parserOptions` property like this:
+1. Clona el repositorio:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+   ```bash
+   git clone https://github.com/Josealjaga/tuhotel-front.git
+   ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
->>>>>>> 5c9abe6 (Pagina web Tu-Hotel front actualizado)
+2. Instala las dependencias:
+
+   ```bash
+   cd tuhotel-front
+   npm install
+   ```
+
+3. Configura las variables de entorno:
+
+   Crea un archivo `.env` en la raíz del proyecto y configura las siguientes variables:
+
+   ```plaintext
+   REACT_APP_API_URL=http://localhost:3000
+   ```
+
+4. Inicia el servidor de desarrollo:
+
+   ```bash
+   npm start
+   ```
+
+   La aplicación se abrirá en `http://localhost:3000`.
+
+## Scripts disponibles
+
+- **`npm start`**: Inicia la aplicación en modo de desarrollo.
+- **`npm run build`**: Construye la aplicación para producción en la carpeta `build`.
+- **`npm test`**: Ejecuta las pruebas.
+
+## Contribuciones
+
+Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
+
+1. Haz un fork del proyecto.
+2. Crea una rama para tu nueva funcionalidad (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y haz commit (`git commit -m 'Añadir nueva funcionalidad'`).
+4. Sube los cambios a tu repositorio (`git push origin feature/nueva-funcionalidad`).
+5. Crea un pull request en GitHub.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
