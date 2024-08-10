@@ -1,3 +1,4 @@
+import { BACKEND } from '@Shared/Consts/Back';
 import { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; // Asegúrate de tener react-router-dom instalado
 import { useNavigate } from 'react-router-dom';
@@ -27,7 +28,7 @@ const HotelDetails: FC = () => {
 
   useEffect(() => {
     const fetchHotelDetails = async () => {
-      const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/hotels/${id}`);
+      const result = await fetch(`${BACKEND}/hotels/${id}`);
       const data = await result.json();
       setHotel(data.data); 
       setRooms(data.data.rooms); 

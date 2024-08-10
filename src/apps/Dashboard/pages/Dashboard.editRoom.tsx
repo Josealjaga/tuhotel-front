@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Card from '@Shared/Components/Card.tsx';
 import Input from '@Shared/Components/Input';
 import Button from '@Shared/Components/Button';
+import { BACKEND } from '@Shared/Consts/Back';
 
 
 interface Room {
@@ -42,7 +43,7 @@ const EditRoom: FC<EditRoomProps> = () => {
   useEffect(() => {
  
     const fetchRooms = async () => {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/rooms/${id}`, {
+      const response = await fetch(`${BACKEND}/rooms/${id}`, {
         method: 'GET',
       });
 
@@ -72,7 +73,7 @@ const EditRoom: FC<EditRoomProps> = () => {
       const body = JSON.stringify(data);
       const token = sessionStorage.getItem('user_token');
 
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/admin/updateRooms/${id}`, { 
+      const response = await fetch(`${BACKEND}/admin/updateRooms/${id}`, { 
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

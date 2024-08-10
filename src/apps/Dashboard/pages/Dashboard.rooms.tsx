@@ -1,3 +1,4 @@
+import { BACKEND } from '@Shared/Consts/Back';
 import { FC, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +19,7 @@ const AdminRooms: FC<AdminRoomProps> = () => {
 
   useEffect(() => {
     const fetchRooms = async () => {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/rooms/`, {
+      const response = await fetch(`${BACKEND}/rooms/`, {
         method: 'GET',
       });
 
@@ -35,7 +36,7 @@ const AdminRooms: FC<AdminRoomProps> = () => {
 
   const handleDeleteRoom = async (id: string) => {
     const token = sessionStorage.getItem('user_token');
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/admin/deleteRooms/${id}`, {
+    const response = await fetch(`${BACKEND}/admin/deleteRooms/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,

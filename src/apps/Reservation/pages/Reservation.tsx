@@ -1,3 +1,4 @@
+import { BACKEND } from '@Shared/Consts/Back';
 import { FC, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -30,13 +31,13 @@ const Reservation: FC = () => {
 
   useEffect(() => {
     const fetchRoomDetails = async () => {
-      const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/rooms/${roomId}`);
+      const result = await fetch(`${BACKEND}/rooms/${roomId}`);
       const data = await result.json();
       setRoom(data.data);
     };
 
     const fetchReservedDates = async () => {
-      const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/reservations/${roomId}`, {
+      const result = await fetch(`${BACKEND}/reservations/${roomId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

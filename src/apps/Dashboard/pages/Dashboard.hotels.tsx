@@ -1,3 +1,4 @@
+import { BACKEND } from '@Shared/Consts/Back';
 import { FC,useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,7 +22,7 @@ const AdminHotels: FC<AdminHotelProps> = () => {
 
   useEffect(() => {
     const fetchHotels = async () => {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/hotels/`, {
+      const response = await fetch(`${BACKEND}/hotels/`, {
         method: 'GET',
       });
 
@@ -38,7 +39,7 @@ const AdminHotels: FC<AdminHotelProps> = () => {
 
   const handleDeleteHotel = async (id: string) => {
     const token = sessionStorage.getItem('user_token');
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/admin/hotels/${id}`, {
+    const response = await fetch(`${BACKEND}/admin/hotels/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,

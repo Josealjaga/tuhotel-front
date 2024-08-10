@@ -10,6 +10,7 @@ import { useNavigate, } from 'react-router-dom';
 import Card from '@Shared/Components/Card';
 import Input from '@Shared/Components/Input';
 import Button from '@Shared/Components/Button';
+import { BACKEND } from '@Shared/Consts/Back';
 
 type LoginProps = object;
 
@@ -46,7 +47,7 @@ const Login: FC<LoginProps> = () => {
     try {
       const body = JSON.stringify(data);
 
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
+      const response = await fetch(`${BACKEND}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

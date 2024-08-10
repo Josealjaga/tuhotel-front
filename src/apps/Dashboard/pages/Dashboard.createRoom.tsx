@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Card from '@Shared/Components/Card.tsx';
 import Input from '@Shared/Components/Input';
 import Button from '@Shared/Components/Button';
+import { BACKEND } from '@Shared/Consts/Back';
 
 interface Hotel {
   id: string;
@@ -35,7 +36,7 @@ const CreateRoom: FC<CreateRoomProps> = () => {
 
   useEffect(() => {
     const fetchHotels = async () => {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/hotels`);
+      const response = await fetch(`${BACKEND}/hotels`);
       if (response.ok) {
         const data = await response.json();
         setHotels(data.data);
@@ -72,7 +73,7 @@ const CreateRoom: FC<CreateRoomProps> = () => {
       const body = JSON.stringify(data);
       const token = sessionStorage.getItem('user_token');
 
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/admin/rooms`, { 
+      const response = await fetch(`${BACKEND}/admin/rooms`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
