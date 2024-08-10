@@ -18,7 +18,7 @@ const AdminRooms: FC<AdminRoomProps> = () => {
 
   useEffect(() => {
     const fetchRooms = async () => {
-      const response = await fetch('http://localhost:3000/rooms/', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/rooms/`, {
         method: 'GET',
       });
 
@@ -35,7 +35,7 @@ const AdminRooms: FC<AdminRoomProps> = () => {
 
   const handleDeleteRoom = async (id: string) => {
     const token = sessionStorage.getItem('user_token');
-    const response = await fetch(`http://localhost:3000/admin/deleteRooms/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/admin/deleteRooms/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,

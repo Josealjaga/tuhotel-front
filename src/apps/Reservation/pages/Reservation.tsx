@@ -30,13 +30,13 @@ const Reservation: FC = () => {
 
   useEffect(() => {
     const fetchRoomDetails = async () => {
-      const result = await fetch(`http://localhost:3000/rooms/${roomId}`);
+      const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/rooms/${roomId}`);
       const data = await result.json();
       setRoom(data.data);
     };
 
     const fetchReservedDates = async () => {
-      const result = await fetch(`http://localhost:3000/reservations/${roomId}`, {
+      const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/reservations/${roomId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

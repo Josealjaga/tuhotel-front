@@ -35,7 +35,7 @@ const CreateRoom: FC<CreateRoomProps> = () => {
 
   useEffect(() => {
     const fetchHotels = async () => {
-      const response = await fetch('http://localhost:3000/hotels');
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/hotels`);
       if (response.ok) {
         const data = await response.json();
         setHotels(data.data);
@@ -72,7 +72,7 @@ const CreateRoom: FC<CreateRoomProps> = () => {
       const body = JSON.stringify(data);
       const token = sessionStorage.getItem('user_token');
 
-      const response = await fetch('http://localhost:3000/admin/rooms', { 
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/admin/rooms`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

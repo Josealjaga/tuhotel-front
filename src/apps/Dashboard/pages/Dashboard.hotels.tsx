@@ -21,7 +21,7 @@ const AdminHotels: FC<AdminHotelProps> = () => {
 
   useEffect(() => {
     const fetchHotels = async () => {
-      const response = await fetch('http://localhost:3000/hotels/', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/hotels/`, {
         method: 'GET',
       });
 
@@ -38,7 +38,7 @@ const AdminHotels: FC<AdminHotelProps> = () => {
 
   const handleDeleteHotel = async (id: string) => {
     const token = sessionStorage.getItem('user_token');
-    const response = await fetch(`http://localhost:3000/admin/hotels/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/admin/hotels/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,

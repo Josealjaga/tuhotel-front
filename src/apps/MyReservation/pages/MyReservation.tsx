@@ -27,7 +27,7 @@ const MyReservations: FC = () => {
 
   useEffect(() => {
     const fetchReservations = async () => {
-      const result = await fetch('http://localhost:3000/reservations/myreservations', {
+      const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/reservations/myreservations`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem('user_token')}` 
         }
@@ -44,7 +44,7 @@ const MyReservations: FC = () => {
 
   const fetchRooms = async (roomIds: string[]) => {
     // Fetch all rooms in one request
-    const result = await fetch(`http://localhost:3000/rooms?ids=${roomIds.join(',')}`, {
+    const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/rooms?ids=${roomIds.join(',')}`, {
       headers: {
         Authorization: `Bearer ${sessionStorage.getItem('user_token')}` 
       }
@@ -58,7 +58,7 @@ const MyReservations: FC = () => {
   };
 
   const handleCancelReservation = async (id: string) => {
-    await fetch(`http://localhost:3000/reservations/${id}`, {
+    await fetch(`${process.env.REACT_APP_BACKEND_URL}/reservations/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${sessionStorage.getItem('user_token')}` 

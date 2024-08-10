@@ -25,11 +25,11 @@ const Home: FC<HomeProps> = () => {
   const [priceOrder, setPriceOrder] = useState<'asc' | 'desc'>('asc');
   const [filteredHotels, setFilteredHotels] = useState<Array<Hotel>>([]);
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     setLoading(true);
     const getAllHotels = async () => {
-      const result = await fetch('http://localhost:3000/hotels', {
+      const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/hotels`, {
         method: 'GET',
       });
 

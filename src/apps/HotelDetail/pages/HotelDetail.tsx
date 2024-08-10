@@ -27,7 +27,7 @@ const HotelDetails: FC = () => {
 
   useEffect(() => {
     const fetchHotelDetails = async () => {
-      const result = await fetch(`http://localhost:3000/hotels/${id}`);
+      const result = await fetch(`${process.env.REACT_APP_BACKEND_URL}/hotels/${id}`);
       const data = await result.json();
       setHotel(data.data); 
       setRooms(data.data.rooms); 
