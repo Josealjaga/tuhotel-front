@@ -31,7 +31,7 @@ const HotelDetails: FC = () => {
       const result = await fetch(`${BACKEND}/hotels/${id}`);
       const data = await result.json();
       setHotel(data.data); 
-      setRooms(data.data.rooms); 
+      setRooms(data.data.Rooms); 
     };
 
     fetchHotelDetails();
