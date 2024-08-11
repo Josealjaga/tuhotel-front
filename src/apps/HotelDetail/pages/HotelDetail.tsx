@@ -8,6 +8,11 @@ interface Hotel {
   name: string;
   photo: string;
   description: string;
+  country: string;
+  city: string;
+  address: string;
+  ranking: number;
+  bestPrice: number;
 }
 
 interface Room {
@@ -47,6 +52,8 @@ const HotelDetails: FC = () => {
             <div className="p-6">
               <h1 className="text-3xl font-bold mb-2">{hotel.name}</h1>
               <p className="text-gray-700 mb-4">{hotel.description}</p>
+              <p className="text-gray-700 mb-4">Ubicado en: {hotel.country}, {hotel.city}, {hotel.address}</p>
+              <p className="text-gray-700 mb-4">Ranking: {hotel.ranking}</p>
             </div>
           </div>
           <div className="mt-6">
